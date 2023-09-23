@@ -1,0 +1,226 @@
+/* 
+    Document   : style.css
+    Created on : 8-Oct-2010, 4:19:33 PM
+    Author     : Test
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+* {
+    margin:0px;
+    padding:0px;
+    font-size:15px;
+    color:black;
+}
+a{
+  color:black;
+  text-decoration: none;
+}
+a img{
+  border-style:none;
+  border-width:0;
+  border-color:transparent;
+}
+body{
+background-color: #ffffff;
+text-align: center;
+}
+div#wrapper{
+  width: 900px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+}
+div#wrapper2{
+background-image:url(./images/left_border.png);
+background-repeat: repeat-y;
+padding-left:50px;
+  width: 900px;
+  min-height:500px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: left;
+  border-color:#4b5765;
+  border-style: solid;
+  border-width:1px;
+}
+html div#wrapper2 {
+   height: expression( this.scrollHeight < 501 ? "500px" : "auto" ); /* sets min-height for IE */
+}
+div#leftNav{
+  /*background-color: yellow;*/
+  float:left;
+  height:700px;
+  width:100px;
+  text-align: left;
+  z-index: 100;
+}
+html div#leftNav {
+   height: expression( this.scrollHeight < 701 ? "700px" : "auto" ); /* sets min-height for IE */
+}
+div#header{
+  /*background-color: green;*/
+  float: right;
+  width:750px;
+  height:200px;
+  top:0px;
+  left:0px;
+  display:block;
+}
+div#seperator{
+  clear:both;
+}
+div#main{
+  /*background-color: blue;*/
+  float:right;
+  min-height:450px;
+  width:800px;
+}
+html div#main {
+   height: expression( this.scrollHeight < 426 ? "425px" : "auto" ); /* sets min-height for IE */
+}
+div#header span#jonathan,
+div#header span#hines{
+  font-size:3em;
+  font-family: Georgia,'Times New Roman',times,serif;
+}
+div#header span#jonathan{
+  margin-left:50px;
+}
+div#header span#hines{
+  margin-left:200px;
+}
+div#header img#jonathan_hines{
+  z-index: 100;
+  margin-left:50px;
+  margin-top:25px;
+}
+
+div#header span#pnw{
+  display:block;
+  text-align:right;
+  margin-right:70px;
+  font-family: Geneva,Arial,Helvetica,sans-serif;
+  font-size:2em;
+}
+div#header div#section_logo{
+  float:right;
+  /*background-color: purple;*/
+  width:200px;
+  height:200px;
+  text-align: center;
+}
+div#leftNav ul{
+  margin-top:10px;
+  margin-left: 5px;
+}
+div#leftNav li{
+  margin-top:15px;
+  list-style: none;
+  display: block;
+  padding-left:5px;
+  /*
+  height:128px;
+  width:65px;
+  background-image:url(./images/nav_border.png);
+  font-family: serif;
+  margin-top:-25px;
+  padding-top:43px;*/
+  font-family: Georgia,'Times New Roman',times,serif;
+}
+
+div#leftNav span.nav a{
+  display:block;
+  font-size: 14px;
+  margin-left:12px;
+  margin-top:3px;
+  font-family: Arial,Helvetica,sans-serif;
+  color:#4b5765;
+}
+div#leftNav p#sectionLabel{
+  margin-top:50px;
+  width:40px;
+  text-align: center;
+  font-size: 1.5em;
+  color:#4b5765;
+}
+div#content{
+  margin-top:50px;
+  margin-right:25px;
+  margin-left:25px;
+  text-align: left;
+}
+div#content h1{
+  font-size: 30px;
+  font-family: Arial,Helvetica,sans-serif;
+}
+div#content p{
+  text-indent: 15px;
+  font-size: 20px;
+  line-height: 150%;
+  margin-bottom: 15px;
+}
+div#content a{
+  text-decoration: underline;
+  font-size: 20px;
+}
+div#content span.active{
+  font-size: 20px;
+}
+div#content ul{
+  margin-left: 15px;
+}
+div#content ul li a,
+div#content ul li{
+  font-size: 20px;
+}
+div#footer{
+  margin-left:50px;
+  text-align: right;
+  padding-right:65px;
+  margin-bottom: 15px;
+}
+div .galleryLinkWraper{
+  margin-right:auto;
+  margin-left:auto;
+  height:150px;
+  width:120px;
+  text-align:center;
+  float:left;
+}
+div .galleryLinkWraperSection{
+  margin-right:auto;
+  margin-left:auto;
+  height:120px;
+  width:120px;
+  text-align:center;
+  float:left;
+}
+div .imageBuffer{
+  height:115px;
+  line-height: 110px;
+}
+div#content div.imageBoundry{
+}
+div#content a.galleryImage{
+  height:110px;
+}
+div#content a.galleryImage img,
+img.bordered{
+  border-style: solid;
+  border-width: 1px;
+  border-color: #4B5765;
+  padding:4px;
+}
+div#content a.gallery{
+  line-height: 110%;
+  display:block;
+  margin-right:auto;
+  margin-left:auto;
+  text-align: center
+}
