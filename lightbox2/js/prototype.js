@@ -487,7 +487,7 @@ Object.extend(String.prototype, {
   isJSON: function() {
     var str = this;
     if (str.blank()) return false;
-    str = this.replace(/\\./g, '@').replace(/"[^"\\\n\r]*"/g, '');
+    str = this.replace(/\\/g, '@').replace(/"[^"\\\n\r]*"/g, '');
     return (/^[,:{}\[\]0-9.\-+Eaeflnr-u \n\r\t]*$/).test(str);
   },
 
@@ -2762,7 +2762,7 @@ var Selector = Class.create({
       this.xpath = Selector._cache[e]; return;
     }
 
-    this.matcher = ['.//*'];
+    this.matcher = ['//*'];
     while (e && le != e && (/\S/).test(e)) {
       le = e;
       for (var i in ps) {
@@ -2896,10 +2896,10 @@ Object.extend(Selector, {
         return "[not(" + exclusion.join(" and ") + ")]";
       },
       'nth-child':      function(m) {
-        return Selector.xpath.pseudos.nth("(count(./preceding-sibling::*) + 1) ", m);
+        return Selector.xpath.pseudos.nth("(count(/preceding-sibling::*) + 1) ", m);
       },
       'nth-last-child': function(m) {
-        return Selector.xpath.pseudos.nth("(count(./following-sibling::*) + 1) ", m);
+        return Selector.xpath.pseudos.nth("(count(/following-sibling::*) + 1) ", m);
       },
       'nth-of-type':    function(m) {
         return Selector.xpath.pseudos.nth("position() ", m);
@@ -4157,7 +4157,7 @@ if (!document.getElementsByClassName) document.getElementsByClassName = function
   function(element, className) {
     className = className.toString().strip();
     var cond = /\s/.test(className) ? $w(className).map(iter).join('') : iter(className);
-    return cond ? document._getElementsByXPath('.//*' + cond, element) : [];
+    return cond ? document._getElementsByXPath('//*' + cond, element) : [];
   } : function(element, className) {
     className = className.toString().strip();
     var elements = [], classNames = (/\s/.test(className) ? $w(className) : null);

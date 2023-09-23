@@ -5,7 +5,7 @@ if(!isset($_GET['portfolio'])){
 }
 echo " - ".ucwords($_GET['portfolio']);
 echo "</h1>\r\n";
-$workDir = "./portfolio/";
+$workDir = "/portfolio/";
 $workDirHandle = opendir($workDir);
 $categories = array();
 if($workDirHandle){
@@ -23,7 +23,7 @@ foreach($categories as $name => $category){
   if($name==$_GET['portfolio']){
     $links[]="<span class='active'>".ucwords($name)."</span>\r\n";
   }else{
-    $links[]="<a href='?content=photography&portfolio=".
+    $links[]="<a href='/photography/".
       $name.
       "'>".ucwords($name)."</a>";
   }
@@ -32,7 +32,7 @@ echo "<div id='galleryLinks' style='text-align:right;height:50px;padding-top:25p
   .implode(" | \r\n",$links)."</div><!--galleryLinks-->\r\n";
 if(isset($categories[$_GET['portfolio']])){
   echo "<div id='gallery' style='text-align: right; position:relative; width:730px; float:right;'>\r\n";
-  $workDir = "./portfolio/".$categories[$_GET['portfolio']]."/";
+  $workDir = "/portfolio/".$categories[$_GET['portfolio']]."/";
     $workDirHandle = opendir($workDir);
     $images = array();
     if($workDirHandle){
@@ -72,7 +72,7 @@ if(isset($categories[$_GET['portfolio']])){
       }
       $link.=">"
                   //."<div class='imageBuffer'>"
-                  ."<img src='./portfolio/thumbnails/"
+                  ."<img src='/portfolio/thumbnails/"
                           .$image
                           ."' "
                           ."alt='"

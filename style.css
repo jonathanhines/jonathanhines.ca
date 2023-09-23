@@ -37,7 +37,7 @@ div#wrapper{
   text-align: left;
 }
 div#wrapper2{
-background-image:url(./images/left_border.png);
+background-image:url(/images/left_border.png);
 background-repeat: repeat-y;
 padding-left:50px;
   width: 900px;
@@ -127,7 +127,7 @@ div#leftNav li{
   /*
   height:128px;
   width:65px;
-  background-image:url(./images/nav_border.png);
+  background-image:url(/images/nav_border.png);
   font-family: serif;
   margin-top:-25px;
   padding-top:43px;*/
